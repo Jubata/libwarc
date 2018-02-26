@@ -198,7 +198,8 @@ TEST(WARCFile, iterator)
 	records << get_record().str();
 	records << get_record2().str();
 	unsigned count = 0;
-	WARCFile file("test.data");
+	std::ifstream data("test.data");
+	WARCFile file(data);
 	for(auto it=file.begin(); it != file.end(); it++, count++);
 	ASSERT_EQ(2, count);
 }

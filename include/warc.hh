@@ -92,10 +92,10 @@ std::ostream& operator<< (std::ostream& os, const WARCRecord& record);
 class WARCFile
 {
 	private:
-		std::ifstream _file_stream;
+		std::istream& _file_stream;
 
 	public:
-		explicit WARCFile(std::string filename) : _file_stream(filename) {};
+		explicit WARCFile(std::istream& stream) : _file_stream(stream) {};
 
 		auto begin()
 		{
